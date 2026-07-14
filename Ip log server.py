@@ -25,7 +25,7 @@ def log_ip():
         "content": f"IP: {ip}\nUser-Agent: {user_agent}"
     })
 
-    return "OK""
+    return "OK"
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
