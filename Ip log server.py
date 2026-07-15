@@ -28,3 +28,7 @@ def log_ip():
     time.sleep(2)
 
     return redirect("https://gengaog.github.io/-/")
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
