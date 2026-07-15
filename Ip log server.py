@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request , redirect
 from werkzeug.middleware.proxy_fix import ProxyFix
 import requests
 import os
