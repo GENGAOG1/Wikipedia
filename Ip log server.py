@@ -27,7 +27,7 @@ def log_ip():
         "content": f"IP: {ip}\nUser-Agent: {user_agent}"
     })
 
-   return brwoser
+   
     
     time.sleep(10)
 
