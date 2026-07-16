@@ -4,7 +4,7 @@ import os
 import time
 
 app = Flask(__name__)
-WEBHOOK_URL = "https://discord.com/api/webhooks/1526282389628915726/HE9Q2YrI1na7ZMQqatS3f5KitCsa9vv0n7gMQ9KmmvtR1tfOgcwBMXkUyqowB0-YQdE8"
+WEBHOOK_URL = "https://discord.com/api/webhooks/1527235730055630858/VLFC3_nVPd0zdVMZLN5A9utw1oWapMWx0MLIKXYYKv551KmndGOKbITTiKO-Hc57evMT"
 
 @app.route('/log')
 def log_ip():
