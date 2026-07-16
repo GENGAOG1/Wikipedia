@@ -12,7 +12,7 @@ app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1)
 
 WEBHOOK_URL = "https://discord.com/api/webhooks/1526282389628915726/HE9Q2YrI1na7ZMQqatS3f5KitCsa9vv0n7gMQ9KmmvtR1tfOgcwBMXkUyqowB0-YQdE8"
 
-@app.route("/")
+@app.route("/log")
 def log_ip():
     ip = (
         request.headers.get("CF-Connecting-IP")
