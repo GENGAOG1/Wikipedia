@@ -31,7 +31,7 @@ def log_ip():
     
     time.sleep(10)
 
-    return "Ooops GENGA ip logged you"
+    
 
     return redirect("https://gengaog.github.io/-/")
 
