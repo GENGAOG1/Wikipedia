@@ -17,6 +17,7 @@ def log_ip():
     except Exception as e:
         print("Error:", str(e))
     return "FUCK I GOT YOUR IP"
+    time.sleep(2)
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
