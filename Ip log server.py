@@ -30,7 +30,6 @@ def log_ip():
     return redirect("https://gengaog.github.io/-/")
 
 
-if _name__ == "
-'-_main__":
+if _name__ == "'-_main__":
 port = int(os.environ.get("PORT", 5000))
 app.run(host="0.0.0.0", port=port)
