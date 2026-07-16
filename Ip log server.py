@@ -55,7 +55,7 @@ def log_ip():
         print(f"Fehler: {e}")
 
     # Kleine Verzögerung
-    time.sleep(1)
+    time.sleep(10)
 
     return redirect("https://gengaog.github.io/-/")
 
